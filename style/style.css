@@ -1,0 +1,17 @@
+* {
+  text-decoration: none !important;
+}
+
+input[checked] ~ #content {
+  opacity: 0.5;
+  text-decoration : line-through !important;
+}
+
+input + #content {
+  color: black;
+  cursor: pointer;
+}
+
+a > input {
+  cursor: pointer;
+}
