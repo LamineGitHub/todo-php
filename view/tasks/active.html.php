@@ -17,7 +17,7 @@
             </a>
 
             <label class="ms-auto btn btn-danger btn-sm">
-                <a href="" onclick=confirme()>
+                <a href="index.php?task=delete&id=<?= $task->id ?>" onclick=confirme()>
                     <img src="style/poubelle.svg" alt="">
                 </a>
             </label>
