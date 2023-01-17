@@ -18,11 +18,11 @@
         <h1 class="mb-4">Todo List</h1>
 
         <form class="d-flex pb-4" action="index.php?task=add" method="post">
-            <input required class="mr-4 form-control" type="text" placeholder="Acheter des patates..." name="content" data-com.bitwarden.browser.user-edited="yes">
+            <input required class="mr-4 form-control" type="text" placeholder="Ajouter une tâches..." name="content" data-com.bitwarden.browser.user-edited="yes">
             <button type="submit" class="ms-2 btn btn-primary">Ajouter</button>
         </form>
 
-        <main>
+        <main class="mb-4">
 
             <?= $pageContent ?>
 

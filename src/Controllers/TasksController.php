@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controllers;
 
 use App\Http;
@@ -70,6 +71,26 @@ class TasksController
         }
 
         $this->model->delete($id);
+
+        Http::redirect("index.php");
+    }
+
+    public function status()
+    {
+        if (empty($_GET['id']) || !ctype_digit($_GET['id'])) {
+            die("Ho ?! Tu n'as pas précisé l'id !");
+        }
+
+        $id = $_GET['id'];
+
+        $item = $this->model->getOne($id);
+        if (!$item) {
+            die("L'id $id n'existe pas, vous ne pouvez donc pas le supprimer !");
+        }
+
+        $status = $item->status === 0 ? 1 : 0;
+
+        $this->model->status($status, $id);
 
         Http::redirect("index.php");
     }

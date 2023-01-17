@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Models;
 
 use App\Database;
@@ -16,7 +17,9 @@ class Tasks
     {
         $query = $this->pdo->prepare("SELECT * FROM tasks");
         $query->execute();
+
         $items = $query->fetchAll();
+        $query->closeCursor();
 
         return $items;
     }
@@ -28,6 +31,7 @@ class Tasks
         $query->execute(['id' => $id]);
 
         $item = $query->fetch();
+        $query->closeCursor();
 
         return $item;
     }
@@ -36,7 +40,9 @@ class Tasks
     {
         $query = $this->pdo->prepare("SELECT * FROM tasks WHERE status = 1");
         $query->execute();
+
         $items = $query->fetchAll();
+        $query->closeCursor();
 
         return $items;
     }
@@ -45,7 +51,9 @@ class Tasks
     {
         $query = $this->pdo->prepare("SELECT * FROM tasks WHERE status = 0");
         $query->execute();
+
         $items = $query->fetchAll();
+        $query->closeCursor();
 
         return $items;
     }
@@ -58,7 +66,15 @@ class Tasks
 
     public function delete(int $id)
     {
-        $query = $this->pdo->prepare("SELECT * FROM tasks WHERE status = :id");
+        $query = $this->pdo->prepare("DELETE FROM tasks WHERE id = :id");
         $query->execute(['id' => $id]);
+    }
+
+    public function status(int $staus, int $id)
+    {
+        $query = $this->pdo->prepare("UPDATE `tasks` SET status = :status  WHERE id = :id");
+        $query->bindValue(":status", $staus, \PDO::PARAM_BOOL);
+        $query->bindValue(":id", $id, \PDO::PARAM_INT);
+        $query->execute();
     }
 }

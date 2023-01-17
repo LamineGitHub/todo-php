@@ -9,7 +9,7 @@
 
         <li class="todo list-group-item d-flex align-items-center">
 
-            <a href="">
+            <a href="index.php?task=status&id=<?= $task->id ?>">
                 <input class="form-check-input" type="checkbox" <?= $task->status === 1 ? "checked" : null ?>>
                 <label class="ms-2 form-check-label" id="content">
                     <?= $task->content ?>
