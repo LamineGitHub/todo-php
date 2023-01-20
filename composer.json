@@ -9,9 +9,5 @@
             "name": "Lamine Diallo",
             "email": "bah07565@gmail.com"
         }
-    ],
-    "require": {
-        "symfony/var-dumper": "^6.2",
-        "filp/whoops": "^2.14"
-    }
+    ]
 }

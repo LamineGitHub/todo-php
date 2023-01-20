@@ -13,7 +13,7 @@
 
 <body>
 
-    <section class="container pt-5" id="todolist">
+    <section class="container pt-5">
 
         <h1 class="mb-4">Todo List</h1>
 
@@ -31,10 +31,6 @@
     </section>
 
 </body>
-<script>
-    function confirme() {
-        return window.confirm(`Êtes vous sur de vouloir supprimer cette task ?!`)
-    }
-</script>
+
 
 </html>

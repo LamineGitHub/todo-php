@@ -1,5 +1,6 @@
 * {
   text-decoration: none !important;
+  font-family: 'open sans';
 }
 
 input[checked] ~ #content {
