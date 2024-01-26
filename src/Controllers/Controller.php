@@ -7,19 +7,12 @@ use App\Models\Tasks as TasksModel;
 use App\Renderer;
 use Exception;
 
-
-class Controller
+abstract class Controller
 {
     protected TasksModel $model;
 
-    /**
-     * @var string
-     */
     protected string $controllerName;
 
-    /**
-     * @var string
-     */
     protected string $taskName;
 
     public function __construct()
@@ -39,7 +32,7 @@ class Controller
     }
 
     /**
-     * Il obtient les tâches actives du modèle, 
+     * Il obtient les tâches actives du modèle,
      * puis affiche la vue active avec les tâches et le titre
      * de la page.
      */
@@ -52,7 +45,7 @@ class Controller
     }
 
     /**
-     * Il obtient les tâches inactives du modèle, 
+     * Il obtient les tâches inactives du modèle,
      * puis affiche la vue inactive avec les tâches et le titre
      * de la page.
      */
@@ -111,7 +104,7 @@ class Controller
 
     /**
      * Il change le statut d'un élément dans la base de données
-     *  et renvoie la page correspondant.
+     *  et renvoie la page correspondante.
      * @throws Exception
      */
     public function status(): void
