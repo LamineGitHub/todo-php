@@ -7,7 +7,6 @@ use App\Models\Tasks as TasksModel;
 use App\Renderer;
 use Exception;
 
-
 abstract class Controller
 {
     protected TasksModel $model;
@@ -60,7 +59,7 @@ abstract class Controller
 
     /**
      * Il ajoute une nouvelle tâche à la base de données
-     *  et renvoie la page encours.
+     *  et renvoie la page en cours.
      * @throws Exception
      */
     public function add(): void
@@ -82,7 +81,7 @@ abstract class Controller
 
     /**
      * Il supprime une tâche de la base de données
-     * et renvoie la page correspondant.
+     * et renvoie la page correspondante.
      * @throws Exception
      */
     public function delete(): void
@@ -105,7 +104,7 @@ abstract class Controller
 
     /**
      * Il change le statut d'un élément dans la base de données
-     *  et renvoie la page correspondant.
+     *  et renvoie la page correspondante.
      * @throws Exception
      */
     public function status(): void
