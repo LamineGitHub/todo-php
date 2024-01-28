@@ -7,6 +7,7 @@ use App\Models\Tasks as TasksModel;
 use App\Renderer;
 use Exception;
 
+
 abstract class Controller
 {
     protected TasksModel $model;
@@ -104,7 +105,7 @@ abstract class Controller
 
     /**
      * Il change le statut d'un élément dans la base de données
-     *  et renvoie la page correspondante.
+     *  et renvoie la page correspondant.
      * @throws Exception
      */
     public function status(): void
