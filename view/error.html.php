@@ -15,7 +15,7 @@
 
 <main class="container pt-4">
     <h1 class="mb-4">Todo List</h1>
-    <h5>Erreur : <i> <?= $errorMessage ?> </i></h5>
+    <h5>Erreur : <i> <?= $errorMessage ?? "" ?> </i></h5>
 </main>
 
 </body>

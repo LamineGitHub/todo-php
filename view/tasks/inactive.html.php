@@ -7,7 +7,7 @@
 </div>
 
 <ul class="list-group">
-    <?php foreach ($tasks as $task) { ?>
+    <?php foreach ($tasks ?? "" as $task) { ?>
 
         <li class="todo list-group-item d-flex align-items-center">
 

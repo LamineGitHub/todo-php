@@ -7,7 +7,7 @@
 </div>
 
 <ul class="list-group">
-    <?php foreach ($tasks as $task) { ?>
+    <?php foreach ($tasks ?? "" as $task) { ?>
 
         <li class="todo list-group-item d-flex align-items-center">
 
@@ -19,7 +19,8 @@
             </a>
 
             <label class="ms-auto btn btn-danger btn-sm">
-                <a href="index.php?<?= $controllerActive ?>delete&id=<?= $task->id ?>" onclick="return window.confirm(`Êtes vous sur de vouloir supprimer cette tâche ?!`)">
+                <a href="index.php?<?= $controllerActive ?>delete&id=<?= $task->id ?>"
+                   onclick="return window.confirm(`Êtes vous sur de vouloir supprimer cette tâche ?!`)">
                     <img src=" style/poubelle.svg" alt="">
                 </a>
             </label>
